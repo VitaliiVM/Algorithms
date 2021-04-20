@@ -36,7 +36,7 @@ function recursiveBinarySearch(array, item, start, end) {
     }
     if (item < array[middle]) {
         return recursiveBinarySearch(array, item, start, middle - 1);
-    }else {
+    } else {
         return recursiveBinarySearch(array, item, middle + 1, end);
     }
 }
