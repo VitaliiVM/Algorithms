@@ -1,12 +1,7 @@
-//Линейный поиск,пробегаемся по массиву и каждый последующий элемент итеррации сравниваем
-// с item,если элемент найден-возвращаю его индекс в массиве,
-// если элемент не найден то возвращаю пустое значение,
-// count для подсчета колличества итерраций!!!
-//Сложность алгоритма O(n),где n-это колличество элементов итерраций в массиве,
-//В худшем случае приходится пройти весь массив
-
-const array = [1,4,5,8,5,1,2,7,5,2,11];
+const array = require("./utils/arr");
+console.log(array)
 let count = 0;
+
 function linearSearch(array, item) {
     for (let i = 0; i < array.length; i++) {
         count += 1;
@@ -17,5 +12,5 @@ function linearSearch(array, item) {
     return null;
 }
 
-console.log(linearSearch(array,5));
+console.log(linearSearch(array, 5));
 console.log('Count = ' + count);

@@ -1,10 +1,9 @@
-
-
 class Linked_list {
     constructor() {
         this.size = 0;
         this.root = null;
     }
+
     add(value) {
         if (this.size === 0) {
             this.root = new Node(value);
@@ -15,13 +14,14 @@ class Linked_list {
         while (node.next) {
             node = node.next;
         }
-        let newNode = new Node(value);
-        node.next = newNode;
+        node.next = new Node(value);
         this.size += 1;
     }
+
     getSize() {
         return this.size;
     }
+
     print() {
         let result = [];
         let node = this.root
@@ -47,3 +47,4 @@ list.add(2);
 list.add(5);
 list.add(3);
 list.print();
+list.getSize();

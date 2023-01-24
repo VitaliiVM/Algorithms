@@ -1,22 +1,20 @@
-
-
-function cashFunction (fn) {
- const cash = {};
- return function (n) {
-     if (cash[n]) {
-         console.log('Взято из кеша', cash[n]);
-         return cash[n];
-     }
-     let result = fn(n);
-     console.log('Посчитала функция = ', result);
-     cash[n] = result;
-     return result;
- };
+function cashFunction(fn) {
+    const cash = {};
+    return function (n) {
+        if (cash[n]) {
+            console.log('Take from cash', cash[n]);
+            return cash[n];
+        }
+        let result = fn(n);
+        console.log('fn calculate = ', result);
+        cash[n] = result;
+        return result;
+    };
 }
 
-function  fuctorial(n) {
+function fuctorial(n) {
     let result = 1;
-    while (n != 1) {
+    while (n !== 1) {
         result *= n;
         n -= 1;
     }

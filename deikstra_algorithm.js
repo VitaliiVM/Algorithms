@@ -1,5 +1,3 @@
-//Алгоритм поиск акратчайшего пути
-
 const graph = {}
 graph.a = {b: 2, c: 1};
 graph.b = {f: 7};
@@ -10,9 +8,9 @@ graph.f = {g: 1};
 graph.g = {};
 
 function shortPath(graph, start, end) {
-    const costs = {};//кратчайшие пути
-    const processed = [];//проверенные узлы
-    let neighbors = {};//соседние вершины рассматриваемого узла
+    const costs = {};
+    const processed = [];
+    let neighbors = {};
     Object.keys(graph).forEach(node => {
         if (node !== start) {
             let value = graph[start][node];
@@ -47,4 +45,5 @@ function findNodeLowestCost(costs, processed) {
     });
     return lowestNode;
 }
-console.log(shortPath(graph,'a', 'g'));
+
+console.log(shortPath(graph, 'a', 'g'));
