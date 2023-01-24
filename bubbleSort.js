@@ -1,4 +1,5 @@
 const arr = require("./utils/arr");
+const uniqueArray = [...new Set(arr)];
 let count = 0;
 
 function bubbleSort(array) {
@@ -15,7 +16,7 @@ function bubbleSort(array) {
     }
     return array;
 }
-console.log(arr);
-console.log(arr.length);
-console.log(bubbleSort(arr));
+console.log(uniqueArray);
+console.log(uniqueArray.length);
+console.log(bubbleSort(uniqueArray));
 console.log('Count = ' + count);

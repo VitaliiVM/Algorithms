@@ -1,20 +1,25 @@
-const arr = require("./utils/arr");// [0,1,1,2,3.......]
+const arr = require("./utils/arr");
+const uniqueArray = [...new Set(arr)];
 let count = 0;
+const selectionSort = (inputArr) => {
+    let n = inputArr.length;
 
-function selectionSort(array) {
-    for (let i = 0; i < array.length - 1; i++) {
-        let indexMin = i;
-        for (let j = i + 1; j < array.length; j++) {
-            if (array[i] < array[indexMin]) {
-                indexMin = j;
+    for (let i = 0; i < n; i++) {
+        let min = i;
+        count += 1;
+        for (let j = i + 1; j < n; j++) {
+            if (inputArr[j] < inputArr[min]) {
+                min = j;
             }
         }
-
-        [array[i], array[indexMin]] = [array[indexMin], array[i]];
+        if (min !== i) {
+            let tmp = inputArr[i];
+            inputArr[i] = inputArr[min];
+            inputArr[min] = tmp;
+        }
     }
+    return inputArr;
+};
 
-    return array;
-}
-
-console.log(selectionSort(arr));
+console.log(selectionSort(uniqueArray));
 console.log('Count = ' + count);

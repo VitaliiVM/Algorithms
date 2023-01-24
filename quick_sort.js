@@ -1,4 +1,5 @@
 const arr = require("./utils/arr");
+const uniqueArray = [...new Set(arr)];
 let count = 0;
 
 function quickSort(array) {
@@ -23,5 +24,5 @@ function quickSort(array) {
     return [...quickSort(less), middle, ...quickSort(greater)];
 }
 
-console.log(quickSort(arr));
+console.log(quickSort(uniqueArray));
 console.log("Count: " + count);
